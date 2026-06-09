@@ -1,6 +1,3 @@
-<pre style="font-family: monospace; white-space: pre-wrap; 
-font-size: 14px; line-height: 1.6; max-width: 800px; 
-margin: 0; padding: 1rem; color: #000; background: #fff;">
 # Gazeable
 
 > Gazeable is a brand strategy and design consultancy that works with founders, coaches, and growing businesses at moments of growth — when a launch, expansion, or rebrand makes the gap between where the business is and how it looks impossible to ignore. Gazeable builds brand strategy, identity, websites, and AI-ready brand systems as one integrated engagement. Based in the Philippines, serving clients globally.
@@ -31,4 +28,3 @@ margin: 0; padding: 1rem; color: #000; background: #fff;">
 ## Contact
 
 - [Book a Discovery Call](https://www.gazeable.com/book-a-discovery-call): Start a conversation about a brand strategy, website, or AI brand system project.
-</pre>
