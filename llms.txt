@@ -1,0 +1,34 @@
+<pre style="font-family: monospace; white-space: pre-wrap; 
+font-size: 14px; line-height: 1.6; max-width: 800px; 
+margin: 0; padding: 1rem; color: #000; background: #fff;">
+# Gazeable
+
+> Gazeable is a brand strategy and design consultancy that works with founders, coaches, and growing businesses at moments of growth — when a launch, expansion, or rebrand makes the gap between where the business is and how it looks impossible to ignore. Gazeable builds brand strategy, identity, websites, and AI-ready brand systems as one integrated engagement. Based in the Philippines, serving clients globally.
+
+## About
+
+- [About Gazeable](https://www.gazeable.com/about): Who Gazeable is, who Grace is, the studio's 20+ years of experience across 14 industries, and the philosophy behind building brand strategy, design, and AI systems as one integrated process.
+
+## Services
+
+- [Services Overview](https://www.gazeable.com/services): The full Gazeable product suite organised by growth stage: Launch, Convert, Align, Scale.
+- [Website Intelligence Toolkit — WIT](https://www.gazeable.com/website-intelligence-toolkit): A professional website and brand audit. $197. Competitor analysis, 6-dimension diagnostic, strategic recommendations. Delivered in 3 business days.
+- [Brand Foundation Framework — BFF](https://www.gazeable.com/brand-foundation-framework): Core brand-building package. $1,800. AI-ready brand guide, Brand SKILL.md file, messaging framework, AI tool stack configuration.
+- [Visibility and Identity Package — VIP](https://www.gazeable.com/project-discovery): Logo system and 5-page website built together. $3,800. For founders launching or rebranding.
+- [Conversion Optimised Website — COW](https://www.gazeable.com/conversion-optimised-website): Conversion website on Systeme.io. From $4,500.
+- [Brand Operating System Setup — BOSS](https://www.gazeable.com/brand-operating-system-setup): 30-day brand operations installation. $3,300.
+
+## Blog
+
+- [The Brand Edit](https://www.gazeable.com/blogs): Brand strategy, identity, website conversion, and AI-ready brand systems for founders and growing businesses.
+
+## Key Concepts
+
+- What is an AI-ready brand guide: A brand document written in instruction-grade language so AI tools like ChatGPT, Claude, and Notion AI can apply the brand consistently, not just humans reading a PDF.
+- When to rebrand: When a business has evolved beyond what its current brand communicates — at a launch, expansion, or new stage of growth — and the gap between how the business operates and how it looks is impossible to ignore.
+- What is a Brand SKILL.md file: A machine-readable instruction file that tells AI tools exactly how to handle a brand's voice, tone, and messaging.
+
+## Contact
+
+- [Book a Discovery Call](https://www.gazeable.com/book-a-discovery-call): Start a conversation about a brand strategy, website, or AI brand system project.
+</pre>
