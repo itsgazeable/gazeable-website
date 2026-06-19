@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>How to Add "Email My Results" to Any Quiz or Form — Gazeable</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,300;1,6..96,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --mustard: #FFDB41;
+  --amber: #E9AF00;
+  --black: #000000;
+  --shadow: #23232A;
+  --graphite: #383838;
+  --porcelain: #F9F7F3;
+  --silver: #C4C4C4;
+  --cyan: #00829E;
+  --feldgrau: #3B544A;
+  --green: #2d9e5e;
+  --green-bg: #e8f5ee;
+  --red: #c0392b;
+  --red-bg: #fde8e6;
+  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Bodoni Moda', Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--porcelain);
+  color: var(--graphite);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── LAYOUT ── */
+.shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background: var(--black);
+  padding: 32px 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sb-logo {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--mustard);
+  margin-bottom: 4px;
+}
+
+.sb-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,219,65,0.5);
+  margin-bottom: 32px;
+  display: block;
+}
+
+.sb-nav {
+  list-style: none;
+}
+
+.sb-nav-section {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin: 20px 0 8px;
+}
+
+.sb-nav-section:first-child { margin-top: 0; }
+
+.sb-nav a {
+  display: block;
+  font-size: 13px;
+  color: var(--silver);
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+
+.sb-nav a:hover {
+  background: rgba(255,219,65,0.08);
+  color: #ffffff;
+}
+
+.sb-nav a.active {
+  background: rgba(255,219,65,0.12);
+  color: var(--mustard);
+  font-weight: 600;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  padding: 56px 64px 120px;
+  max-width: 760px;
+}
+
+.hero {
+  margin-bottom: 48px;
+}
+
+.hero-eye {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--graphite);
+  margin-bottom: 24px;
+}
+
+.hero-box {
+  background: var(--mustard);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.hero-box-eye {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 6px;
+}
+
+.hero-box p {
+  font-size: 15px;
+  color: var(--black);
+  font-weight: 500;
+}
+
+section {
+  margin-bottom: 56px;
+  scroll-margin-top: 24px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--mustard);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cyan);
+  margin: 28px 0 10px;
+}
+
+p {
+  font-size: 15px;
+  color: var(--graphite);
+  margin-bottom: 16px;
+}
+
+ul, ol {
+  margin: 0 0 16px 0;
+  padding-left: 22px;
+}
+
+ul li, ol li {
+  font-size: 15px;
+  color: var(--graphite);
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+
+ol li::marker { font-weight: 700; color: var(--black); }
+
+strong { color: var(--black); font-weight: 600; }
+
+/* ── CALLOUT BOXES ── */
+.callout {
+  border-left: 3px solid var(--cyan);
+  background: rgba(0,130,158,0.06);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.callout.warn { border-left-color: var(--amber); background: rgba(255,219,65,0.08); }
+.callout.danger { border-left-color: var(--red); background: var(--red-bg); }
+
+.callout-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.callout.warn .callout-label { color: #7a5500; }
+.callout.danger .callout-label { color: var(--red); }
+
+.callout p { margin: 0; font-size: 14px; }
+
+/* ── STEP HEADERS ── */
+.step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--porcelain);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 28px 0 16px;
+}
+
+.step-num {
+  background: var(--black);
+  color: var(--mustard);
+  font-weight: 800;
+  font-size: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* ── CODE BLOCKS ── */
+.code-wrap {
+  position: relative;
+  margin: 16px 0 24px;
+}
+
+pre {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+}
+
+p code, li code {
+  background: rgba(0,0,0,0.06);
+  color: var(--black);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.1);
+  color: #e0e0e0;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.copy-btn:hover { background: rgba(255,219,65,0.15); border-color: var(--mustard); color: var(--mustard); }
+.copy-btn.copied { background: rgba(45,158,94,0.2); border-color: var(--green); color: var(--green); }
+
+/* ── COMPARISON TABLE ── */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  background: var(--black);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: #ffffff;
+}
+
+tr:nth-child(odd) td { background: var(--porcelain); }
+
+.yes { color: var(--green); font-weight: 700; }
+.no { color: var(--red); font-weight: 700; }
+
+/* ── CHECKLIST ── */
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.checklist input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--mustard);
+  flex-shrink: 0;
+}
+
+/* ── REFERENCE TABLE CARD ── */
+.ref-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.ref-row {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.ref-row:last-child { border-bottom: none; }
+
+.ref-label {
+  font-weight: 700;
+  color: var(--black);
+  font-size: 13px;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.ref-val {
+  font-size: 13px;
+  color: var(--graphite);
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.footer p {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--amber);
+  font-size: 14px;
+}
+
+/* ── MOBILE ── */
+.mobile-nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: relative;
+    height: auto;
+    display: none;
+  }
+  .sidebar.open { display: block; }
+  .mobile-nav-toggle {
+    display: block;
+    background: var(--black);
+    color: var(--mustard);
+    border: none;
+    padding: 14px 20px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+  }
+  .main { padding: 32px 24px 80px; }
+  .hero h1 { font-size: 28px; }
+  pre { font-size: 12px; padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<button class="mobile-nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰ Contents</button>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sb-logo">gazeable</div>
+    <span class="sb-badge">Course Module</span>
+
+    <ul class="sb-nav">
+      <li class="sb-nav-section">Overview</li>
+      <li><a href="#what-youll-build">1. What You'll Build</a></li>
+      <li><a href="#why-this-method">2. Why This Method</a></li>
+      <li><a href="#before-you-start">3. Before You Start</a></li>
+
+      <li class="sb-nav-section">Setup</li>
+      <li><a href="#part1">Part 1 — Resend</a></li>
+      <li><a href="#part2">Part 2 — Cloudflare Worker</a></li>
+      <li><a href="#part3">Part 3 — Connect Your Form</a></li>
+      <li><a href="#part4">Part 4 — Test It</a></li>
+
+      <li class="sb-nav-section">Reference</li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+      <li><a href="#reuse">Reusing This Setup</a></li>
+      <li><a href="#quick-reference">Quick Reference Card</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="hero">
+      <span class="hero-eye">Course Module — Email Delivery Setup</span>
+      <h1>How to Add "Email My Results" to Any Quiz, Form, or Tool</h1>
+      <p class="hero-sub">The Cloudflare + Resend Method — free, reliable, works for any client on any platform.</p>
+      <div class="hero-box">
+        <div class="hero-box-eye">What You Will Build</div>
+        <p>A working "send my results" button that emails the person who filled out your form or quiz — and automatically sends you a copy too.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <section id="what-youll-build">
+      <h2>1. What You'll Build</h2>
+      <p>By the end of this module, you'll have a permanent, reusable system that any form or quiz can call to send a personalized email — to the person who filled it in, with a copy to you.</p>
+
+      <h3>The flow, in plain terms</h3>
+      <ul>
+        <li>Someone fills out a quiz or form on your website</li>
+        <li>They type in their email and click "Send My Results"</li>
+        <li>Their browser sends a request to a small piece of code you control (a Cloudflare Worker)</li>
+        <li>That code asks a proper email service (Resend) to deliver the email</li>
+        <li>They receive their results. You receive a copy automatically.</li>
+      </ul>
+
+      <div class="callout">
+        <span class="callout-label">Why This Matters</span>
+        <p>Most free "email from a form" services only let you send to yourself — not to whoever filled in the form. This module solves that specific problem, for free, in a way that works for any client project.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section id="why-this-method">
+      <h2>2. Why This Method (And Not the Others)</h2>
+      <p>There are several popular "no backend needed" form services. We tested the most common ones before landing on this approach. Here's why each one falls short for this specific use case — sending a result back to the person who submitted the form, not just to you.</p>
+
+      <h3>EmailJS</h3>
+      <p>Built specifically to send email from browser JavaScript. Sounds perfect — until you discover the free plan only sends to the email address tied to your connected account. Sending to a different person's address requires a paid plan, and even then requires manually allow-listing your domain.</p>
+
+      <h3>Web3Forms</h3>
+      <p>A simple, free form-to-email API. Same root limitation as EmailJS — submissions only deliver to the account owner's registered email. You'll receive the data, but the person who filled out the form will never get their results.</p>
+
+      <h3>Formsubmit.co</h3>
+      <p>No-signup form backend. Reliable for collecting submissions to yourself. The dynamic recipient override fields are documented but don't function as a true "send to anyone" feature on the free tier — the same spam-prevention restriction applies.</p>
+
+      <h3>Resend, called directly from the browser</h3>
+      <p>Resend actually can send to any address from your own domain — exactly what we need. But calling its API directly from a browser triggers a <strong>CORS error</strong>. Browsers block this on purpose: API keys should never be exposed in code anyone can view by right-clicking "View Source."</p>
+
+      <div class="callout">
+        <span class="callout-label">The Insight</span>
+        <p>Every free browser-to-email service restricts who can receive the email, to prevent spam abuse. Resend doesn't have that restriction — because it's designed to be called from a server, not directly from a browser. The fix isn't a different email service. It's adding a server in between.</p>
+      </div>
+
+      <h3>Comparison at a glance</h3>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Requirement</th>
+            <th>EmailJS</th>
+            <th>Web3Forms</th>
+            <th>Formsubmit</th>
+            <th>Cloudflare + Resend</th>
+          </tr>
+          <tr>
+            <td>Send to any recipient</td>
+            <td class="no">✕ Blocked</td>
+            <td class="no">✕ Blocked</td>
+            <td class="no">✕ Blocked</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+          <tr>
+            <td>Send from your own domain</td>
+            <td class="no">Paid only</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+          <tr>
+            <td>No CORS errors</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Yes (via Worker)</td>
+          </tr>
+          <tr>
+            <td>CC yourself automatically</td>
+            <td>Partial</td>
+            <td class="no">✕ No</td>
+            <td>Partial</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+          <tr>
+            <td>API key hidden from public</td>
+            <td class="no">✕ Exposed</td>
+            <td class="no">✕ Exposed</td>
+            <td>N/A</td>
+            <td class="yes">✓ Hidden in Worker</td>
+          </tr>
+          <tr>
+            <td>Free to run</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Yes</td>
+            <td class="yes">✓ Yes</td>
+          </tr>
+        </table>
+      </div>
+
+      <p>That missing server is called a Cloudflare Worker — and it's free, takes about ten minutes to set up, and you'll reuse the exact same one for every future project.</p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="before-you-start">
+      <h2>3. Before You Start</h2>
+      <p>Make sure you have these three things ready. None of them cost money at this stage.</p>
+      <ul>
+        <li>A domain name you own (e.g. <code>yourbusiness.com</code>) — needed so you can send email "from" your own address</li>
+        <li>Access to your domain's DNS settings (wherever you bought the domain — GoDaddy, Namecheap, Cloudflare, your website host, etc.)</li>
+        <li>An email address at that domain to receive copies of submissions (e.g. <code>hello@yourbusiness.com</code>)</li>
+      </ul>
+
+      <div class="callout warn">
+        <span class="callout-label">No Domain Yet?</span>
+        <p>You can still test this whole setup using Resend's shared sending domain (<code>onboarding@resend.dev</code>) with zero DNS setup. Skip straight to Part 2, and in Part 1 simply note your Resend API key — you won't need to verify a domain.</p>
+      </div>
+    </section>
+
+    <!-- PART 1 -->
+    <section id="part1">
+      <h2>Part 1 — Set Up Resend</h2>
+      <p>Resend is the email service that actually delivers the message. Think of it as the engine — it does the sending, but only when asked by something it trusts (your Worker, built in Part 2).</p>
+
+      <div class="step"><div class="step-num">1</div><div class="step-title">Create your Resend account</div></div>
+      <ol>
+        <li>Go to <a href="https://resend.com" target="_blank" rel="noopener">resend.com</a> and sign up using the email address you want submissions copied to.</li>
+        <li>Confirm your email address if asked.</li>
+      </ol>
+
+      <div class="step"><div class="step-num">2</div><div class="step-title">Add and verify your sending domain</div></div>
+      <ol>
+        <li>In the Resend dashboard, go to <strong>Domains → Add Domain</strong>.</li>
+        <li>Enter your domain (e.g. <code>yourbusiness.com</code>) — not a subdomain, the root domain.</li>
+        <li>Resend will show you 2–3 DNS records to add (usually a TXT record for verification and one or two for DKIM/SPF — these prove you own the domain and prevent your emails from being marked as spam).</li>
+        <li>Go to wherever you manage your domain's DNS — your domain registrar or hosting provider — and add each record exactly as Resend shows it.</li>
+        <li>Return to Resend and click <strong>Verify</strong>. DNS changes can take anywhere from a few minutes to an hour to take effect.</li>
+        <li>Once verified, you'll see a green checkmark next to your domain. Do not continue until you see this.</li>
+      </ol>
+
+      <div class="callout warn">
+        <span class="callout-label">Where To Find DNS Settings</span>
+        <p>If your client doesn't know where their domain DNS is managed, check where they registered the domain (look at their original purchase email) or check their website host's dashboard — most hosting platforms have a DNS or Domain settings section.</p>
+      </div>
+
+      <div class="step"><div class="step-num">3</div><div class="step-title">Create your API key</div></div>
+      <ol>
+        <li>Go to <strong>API Keys → Create API Key</strong>.</li>
+        <li>Name it something memorable, like "Client Tools" or the client's business name.</li>
+        <li>Copy the key immediately — it starts with <code>re_</code> and will only be shown once.</li>
+        <li>Paste it somewhere safe temporarily — you'll need it in Part 2, Step 3.</li>
+      </ol>
+
+      <div class="callout danger">
+        <span class="callout-label">Security Note</span>
+        <p>This API key must never appear in any public-facing HTML, JavaScript, or anything a website visitor's browser can see. It only ever goes inside the Cloudflare Worker code in Part 2, which runs on a server — never in the browser.</p>
+      </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section id="part2">
+      <h2>Part 2 — Set Up the Cloudflare Worker</h2>
+      <p>The Worker is a small piece of code that sits between your form and Resend. It receives the request from the browser, adds your secret API key (which the browser never sees), and forwards everything to Resend.</p>
+
+      <div class="step"><div class="step-num">1</div><div class="step-title">Create a Cloudflare account</div></div>
+      <ol>
+        <li>Go to <a href="https://cloudflare.com" target="_blank" rel="noopener">cloudflare.com</a> and sign up. No credit card required for this.</li>
+      </ol>
+
+      <div class="step"><div class="step-num">2</div><div class="step-title">Create your Worker</div></div>
+      <ol>
+        <li>In your Cloudflare dashboard, go to <strong>Workers & Pages</strong>.</li>
+        <li>Click <strong>Create Application</strong>, then <strong>Create Worker</strong>.</li>
+        <li>Choose "Start with Hello World!"</li>
+        <li>Name your Worker — use something clear like <code>clientname-email</code> or <code>yourbusiness-email</code>. This name becomes part of your permanent Worker URL.</li>
+        <li>Click <strong>Deploy</strong>. You'll see a default "Hello World" response — this is expected. You'll replace the code in the next step.</li>
+      </ol>
+
+      <div class="step"><div class="step-num">3</div><div class="step-title">Replace the Worker code</div></div>
+      <ol>
+        <li>Click <strong>Edit Code</strong> on your newly deployed Worker.</li>
+        <li>Delete everything in the editor.</li>
+        <li>Paste the code below.</li>
+        <li>Replace <code>re_YOUR_API_KEY_HERE</code> with the actual API key you copied in Part 1, Step 3.</li>
+        <li>Replace <code>grace@yourbusiness.com</code> with the actual sending address on your verified domain.</li>
+        <li>Click <strong>Save and Deploy</strong>.</li>
+      </ol>
+
+      <h3>The Worker code</h3>
+      <div class="code-wrap">
+        <button class="copy-btn" onclick="copyCode('worker-code', this)">Copy</button>
+        <pre id="worker-code">export default {
+  async fetch(request) {
+
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      });
+    }
+
+    if (request.method !== 'POST') {
+      return new Response('Method not allowed', { status: 405 });
+    }
+
+    try {
+      const body = await request.json();
+      const { to, subject, text, html } = body;
+
+      const payload = {
+        from: 'Your Business &lt;grace@yourbusiness.com&gt;',
+        to: [to],
+        cc: ['grace@yourbusiness.com'],
+        reply_to: to,
+        subject: subject,
+      };
+
+      if (html) {
+        payload.html = html;
+      } else {
+        payload.text = text;
+      }
+
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer re_YOUR_API_KEY_HERE',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      return new Response(JSON.stringify(data), {
+        status: res.status,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+
+    } catch (err) {
+      return new Response(JSON.stringify({ error: err.message }), {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+    }
+  }
+};</pre>
+      </div>
+
+      <h3>What this code actually does</h3>
+      <ul>
+        <li>Waits for a request containing three things: who to send to (<code>to</code>), the subject line (<code>subject</code>), and the message body (<code>text</code> or <code>html</code>)</li>
+        <li>Builds an email "package" that's always from your business address, always CC's you, and sets reply-to as the form-filler's email so you can reply directly to them</li>
+        <li>Sends that package to Resend's API — server to server, so there's no browser restriction</li>
+        <li>Sends back a response so your form can show a success message</li>
+        <li>If anything goes wrong, it catches the error instead of crashing silently</li>
+      </ul>
+
+      <div class="step"><div class="step-num">4</div><div class="step-title">Note your Worker's permanent URL</div></div>
+      <ol>
+        <li>After deploying, Cloudflare shows your Worker's URL. It will look like:</li>
+      </ol>
+      <div class="code-wrap">
+        <button class="copy-btn" onclick="copyCode('worker-url', this)">Copy</button>
+        <pre id="worker-url">https://yourworkername.yourusername.workers.dev</pre>
+      </div>
+      <p>This URL never changes. Save it — you'll use it in every form or quiz you connect to this system.</p>
+    </section>
+
+    <!-- PART 3 -->
+    <section id="part3">
+      <h2>Part 3 — Connect Your Form or Quiz</h2>
+      <p>Now that the Worker exists, any form or quiz just needs to send a request to it when the "Send My Results" button is clicked. This works the same way no matter what platform hosts your form — Systeme.io, a custom website, WordPress, anything that allows custom JavaScript.</p>
+
+      <div class="step"><div class="step-num">1</div><div class="step-title">Build the email content in JavaScript</div></div>
+      <p>Use template literal backticks (the <code>`</code> character, not regular quotes) to build the email body. This lets you write multi-line HTML directly in your JavaScript without escaping every line break — and it's what makes the email actually look designed instead of plain text.</p>
+      <div class="code-wrap">
+        <button class="copy-btn" onclick="copyCode('email-body', this)">Copy</button>
+        <pre id="email-body">var emailBody = `
+  &lt;div style="font-family: Arial, sans-serif;"&gt;
+    &lt;h2&gt;Your Results&lt;/h2&gt;
+    &lt;p&gt;Here's what we found...&lt;/p&gt;
+  &lt;/div&gt;
+`;</pre>
+      </div>
+
+      <div class="step"><div class="step-num">2</div><div class="step-title">Send the request when the button is clicked</div></div>
+      <div class="code-wrap">
+        <button class="copy-btn" onclick="copyCode('fetch-call', this)">Copy</button>
+        <pre id="fetch-call">fetch('https://yourworkername.yourusername.workers.dev', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    to: email,        // the address the person typed in
+    subject: 'Your Results',
+    html: emailBody
+  })
+}).then(function() {
+  // show a success message to the user
+}).catch(function() {
+  // show success anyway — don't block them on a network hiccup
+});</pre>
+      </div>
+
+      <div class="callout">
+        <span class="callout-label">Why "Show Success Anyway" In The Catch Block</span>
+        <p>If the email send fails due to a temporary network issue, you still want the person to feel like their submission worked — you'll still receive the data on your end via the CC. Never make the visitor feel like something broke when it likely didn't.</p>
+      </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section id="part4">
+      <h2>Part 4 — Test Your Setup</h2>
+      <p>Before handing this off or going live, test the full path end to end.</p>
+      <ol>
+        <li>Open the live form or quiz in a browser.</li>
+        <li>Fill it out completely using an email address you can check (your own, or a second test inbox).</li>
+        <li>Click the "Send My Results" button.</li>
+        <li>Check the test inbox — the email should arrive within a few seconds.</li>
+        <li>Check your own inbox (the one CC'd in the Worker code) — you should receive a copy too.</li>
+        <li>If using Gmail, check the Spam folder on the very first send — brand-new sending domains sometimes land there once before Gmail trusts them.</li>
+      </ol>
+    </section>
+
+    <!-- TROUBLESHOOTING -->
+    <section id="troubleshooting">
+      <h2>Troubleshooting Common Errors</h2>
+
+      <h3>Browser console shows a CORS error</h3>
+      <p>This means your form is calling Resend directly instead of your Worker. Double check the <code>fetch()</code> URL in your form's code points to your <code>workers.dev</code> URL, not <code>api.resend.com</code>.</p>
+
+      <h3>Browser console shows a 403 error</h3>
+      <p>This is a domain restriction error — usually means you're accidentally still using EmailJS, Web3Forms, or Formsubmit code somewhere instead of the Worker. Search your form's code for any of those service names and remove leftover references.</p>
+
+      <h3>Browser console shows a 422 error</h3>
+      <p>The data being sent doesn't match what's expected. Check that your <code>fetch()</code> body includes exactly <code>to</code>, <code>subject</code>, and either <code>text</code> or <code>html</code> — no extra or missing fields.</p>
+
+      <h3>Email never arrives, no error shown</h3>
+      <p>Check that your domain shows a green Verified checkmark in the Resend dashboard. If it's still pending, sends will silently fail until DNS finishes propagating.</p>
+
+      <h3>Email arrives to you (CC) but not to the form-filler</h3>
+      <p>Double check the <code>to</code> field in your <code>fetch()</code> call is actually using the variable holding what the person typed — not a hardcoded email address left over from testing.</p>
+
+      <h3>"Something went wrong" message shows even though the email actually sent</h3>
+      <p>This is a cosmetic issue, not a delivery issue — it means your success/error logic is checking for a response format that doesn't match what's returned. Simplify your <code>.then()</code> block to show success on any non-error response, since the email is already confirmed working.</p>
+    </section>
+
+    <!-- REUSE -->
+    <section id="reuse">
+      <h2>Reusing This Setup for Future Projects</h2>
+      <p>This is the part that makes this method worth learning properly: once built, the exact same Worker can power unlimited forms and quizzes for the same business.</p>
+      <ul>
+        <li>Each new form just needs its own <code>fetch()</code> call pointing at the same Worker URL</li>
+        <li>Change only the <code>to</code>, <code>subject</code>, and <code>html</code>/<code>text</code> content for each new use case</li>
+        <li>No new Cloudflare or Resend setup required for additional forms on the same domain</li>
+        <li>For a new client with a different domain, repeat Part 1 (their domain) and Part 2 (a new Worker) — the code itself barely changes</li>
+      </ul>
+
+      <div class="callout warn">
+        <span class="callout-label">Client Delivery Tip</span>
+        <p>When setting this up for a client, create the Worker inside their own Cloudflare account (not yours) so they retain full ownership and control after the engagement ends. Use their Resend account and their domain throughout.</p>
+      </div>
+    </section>
+
+    <!-- QUICK REFERENCE -->
+    <section id="quick-reference">
+      <h2>Quick Reference Card</h2>
+      <p>Bookmark this section as your at-a-glance checklist for future setups.</p>
+
+      <h3>Setup checklist</h3>
+      <ul class="checklist">
+        <li><input type="checkbox"> Resend account created</li>
+        <li><input type="checkbox"> Domain added and DNS records added at registrar</li>
+        <li><input type="checkbox"> Domain shows green Verified checkmark in Resend</li>
+        <li><input type="checkbox"> API key created and copied</li>
+        <li><input type="checkbox"> Cloudflare account created</li>
+        <li><input type="checkbox"> Worker created and named clearly</li>
+        <li><input type="checkbox"> Worker code pasted with API key and from address filled in</li>
+        <li><input type="checkbox"> Worker deployed and URL saved</li>
+        <li><input type="checkbox"> Form/quiz fetch() call points to Worker URL</li>
+        <li><input type="checkbox"> Test send completed and confirmed in both inboxes</li>
+      </ul>
+
+      <h3>What goes where</h3>
+      <div class="ref-card">
+        <div class="ref-row">
+          <div class="ref-label">Resend API key</div>
+          <div class="ref-val">Resend dashboard → API Keys. Pasted only inside the Worker code.</div>
+        </div>
+        <div class="ref-row">
+          <div class="ref-label">Sending domain</div>
+          <div class="ref-val">Your own domain, verified in Resend → Domains.</div>
+        </div>
+        <div class="ref-row">
+          <div class="ref-label">Worker URL</div>
+          <div class="ref-val">Shown after deploying in Cloudflare → Workers & Pages.</div>
+        </div>
+        <div class="ref-row">
+          <div class="ref-label">fetch() call</div>
+          <div class="ref-val">Inside the form/quiz's own JavaScript — placed on the "Send" button click.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Designed to be gazeable. Built to be profitable.</p>
+    </div>
+
+  </main>
+</div>
+
+<script>
+function copyCode(id, btn) {
+  var el = document.getElementById(id);
+  var text = el.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    var orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = orig;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Highlight active nav item on scroll
+(function() {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.sb-nav a');
+
+  function onScroll() {
+    var current = '';
+    sections.forEach(function(s) {
+      var rect = s.getBoundingClientRect();
+      if (rect.top <= 100) current = s.id;
+    });
+    navLinks.forEach(function(link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
